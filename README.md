@@ -63,13 +63,25 @@ ReactDOM.render(<App/>, document.body)
 # list of props
 | Prop              | Description                                                    | Type               | Default           |
 | ----------------- | -------------------------------------------------------------- | ------------------ | ----------------- |
-| `countryCode`         | options for countryCode: US, IN, AU, CA, 'worldmap'                                         | `String` | null                |
-| `width`    |  width option for svg tag                                            | `String` | 100%              |
-| `height`    |  height option for svg tag  | `String`                   | 100%
+| `countryCode`         | options for countryCode: US, IN, AU, CA, 'worldmap'         | `String` | null                |
+| `width`    |  width option for svg tag                          | `String` | 100%              |
+| `height`    |  height option for svg tag  | `String`                   | 100% |
 | `filldefault`     | region fill default color                                        | `String` | #506EEC           |
 | `strokedefault`     | region stroke(border) default color              | `String` | #ccc           |
-| `customize` | customize option                               | `Object` | '{}'   |     
-| `identifierdata` | customize option in can set 'identifierdata' as tooltip                           | `String` | 'worldmap' in country or 'countrymap' in state,provinces  |     
+| `viewBox`     | set to svg tag  viewBox attribute             | `String` | `according to map`           |
+| `customize` | customize option                   | `Object` | '{}'   |     
+| `identifierdata` | customize option in can set 'identifierdata' as tooltip                | `String` | 'worldmap' in country or 'countrymap' in state,provinces  |   
+
+
+
+### Maps
+
+![alt text](https://raw.githubusercontent.com/jeelchheta/react-geo-maps/refs/heads/main/charts/world.png)
+![alt text](https://raw.githubusercontent.com/jeelchheta/react-geo-maps/refs/heads/main/charts/IN.png)
+![alt text](https://raw.githubusercontent.com/jeelchheta/react-geo-maps/refs/heads/main/charts/AU.png)
+![alt text](https://raw.githubusercontent.com/jeelchheta/react-geo-maps/refs/heads/main/charts/US.png)
+![alt text](https://raw.githubusercontent.com/jeelchheta/react-geo-maps/refs/heads/main/charts/CA.png)
+
 
 ## License
 
