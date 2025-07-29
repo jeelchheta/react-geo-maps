@@ -1,6 +1,6 @@
 {
   "name": "react-geo-charts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple react worldmap and countrymaps component svg base",
   "main": "dist/index.js",
   "scripts": {
