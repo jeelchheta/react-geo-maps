@@ -1,0 +1,46 @@
+{
+  "name": "react-geo-charts",
+  "version": "1.0.0",
+  "description": "A simple react worldmap and countrymaps component svg base",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist --extensions \".jsx,.js\" && cpx \"src/style/*.css\" dist/style && cpx 'src/assets/*.json' dist/assets",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeelchheta/react-simple-checkboxlist.git"
+  },
+  "keywords": [
+    "react",
+    "typescript",
+    "component",
+    "geo map",
+    "usa geo",
+    "world",
+    "map",
+    "countries",
+    "svg map"
+  ],
+  "author": "jp techinsight",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jeelchheta/react-simple-checkboxlist/issues"
+  },
+  "homepage": "https://github.com/jeelchheta/react-simple-checkboxlist#readme",
+  "peerDependencies": {
+    "react": "~19.1.0",
+    "react-dom": "~19.1.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.28.0",
+    "@babel/core": "^7.28.0",
+    "@babel/preset-env": "^7.28.0",
+    "@babel/preset-react": "^7.27.1",
+    "cpx": "^1.5.0",
+    "typescript": "^5.8.3"
+  }
+}
