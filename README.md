@@ -1,4 +1,4 @@
-# react-simple-checkboxlist
+# react-geo-charts
 
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://github.com/jeelchheta/react-simple-checkboxlist/blob/main/LICENSE)
 
@@ -87,4 +87,4 @@ ReactDOM.render(<App/>, document.body)
 
 MIT.
 
-Copyright (c) 2022 Jeel Chheta
+Copyright (c) 2025 Jeel Chheta
