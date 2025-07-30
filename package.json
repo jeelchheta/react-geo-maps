@@ -1,6 +1,6 @@
 {
   "name": "react-geo-charts",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "A simple react worldmap and countrymaps component svg base",
   "main": "dist/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jeelchheta/react-simple-checkboxlist.git"
+    "url": "git+https://github.com/jeelchheta/react-geo-maps.git"
   },
   "keywords": [
     "react",
@@ -28,9 +28,9 @@
   "author": "jp techinsight",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jeelchheta/react-simple-checkboxlist/issues"
+    "url": "https://github.com/jeelchheta/react-geo-maps/issues"
   },
-  "homepage": "https://github.com/jeelchheta/react-simple-checkboxlist#readme",
+  "homepage": "https://github.com/jeelchheta/react-geo-maps#readme",
   "peerDependencies": {
     "react": "~19.1.0",
     "react-dom": "~19.1.0"
