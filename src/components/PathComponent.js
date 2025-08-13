@@ -10,21 +10,27 @@ export default class SVGComponent extends React.Component {
     }
 
     onMouseEnter(e, obj, ISOIdentifier, identifierdata) {
-        this.tooltip = document.createElement('div');
-        this.tooltip.className = 'hover-badge';
-        this.tooltip.innerText = obj?.identifierdata || identifierdata[ISOIdentifier];
+        const { tooltipdisable } = this.props;
+        if ((!tooltipdisable || !obj?.regiontooltipdisable) && !obj?.disable) {
+            this.tooltip = document.createElement('div');
+            this.tooltip.className = 'hover-badge';
+            this.tooltip.innerText = obj?.identifierdata || identifierdata[ISOIdentifier];
 
-        document.body.appendChild(this.tooltip);
+            document.body.appendChild(this.tooltip);
 
-        const rect = this.targetRef.current.getBoundingClientRect();
-        this.tooltip.style.top = `${rect.top - 35 + window.scrollY}px`;
-        this.tooltip.style.left = `${rect.left + rect.width / 2 - this.tooltip.offsetWidth / 2 + window.scrollX}px`;
+            const rect = this.targetRef.current.getBoundingClientRect();
+            this.tooltip.style.top = `${rect.top - 35 + window.scrollY}px`;
+            this.tooltip.style.left = `${rect.left + rect.width / 2 - this.tooltip.offsetWidth / 2 + window.scrollX}px`;
+        }
     };
 
-    onMouseLeave(e) {
-        if (this.tooltip) {
-            this.tooltip.remove();
-            this.tooltip = null;
+    onMouseLeave(e, obj) {
+        const { tooltipdisable } = this.props;
+        if ((!tooltipdisable || !obj?.regiontooltipdisable) && !obj?.disable) {
+            if (this.tooltip) {
+                this.tooltip.remove();
+                this.tooltip = null;
+            }
         }
     };
 
@@ -36,12 +42,12 @@ export default class SVGComponent extends React.Component {
             fill={fill}
             stroke={stroke}
             data-name={ISOIdentifier}
-            className={ISOIdentifier.toLowerCase()}
+            className={`${customize[ISOIdentifier]?.disable ? "path-disable" : ""} ${ISOIdentifier.toLowerCase()}`}
             onClick={(e) => onClick(e, ISOIdentifier)}
             ref={this.targetRef}
             onMouseEnter={(e) => this.onMouseEnter(e, customize[ISOIdentifier],
                 ISOIdentifier, identifierdata)}
-            onMouseLeave={(e) => this.onMouseLeave(e)}
+            onMouseLeave={(e) => this.onMouseLeave(e, customize[ISOIdentifier])}
         />
     }
 }

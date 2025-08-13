@@ -26,26 +26,28 @@ class WorldSVGMap extends _react.default.Component {
     const {
       customize
     } = this.props;
-    if (customize[ISOIdentifier]?.onClick) {
+    if (customize[ISOIdentifier]?.onClick && !customize[ISOIdentifier]?.disable) {
       customize[ISOIdentifier]?.onClick(ISOIdentifier);
     }
   }
   render() {
     const {
-      countryCode,
+      regioncode,
       containerClass,
       width,
       height,
       filldefault,
       strokedefault,
       customize,
-      viewBox
+      viewBox,
+      figure,
+      tooltipdisable
     } = this.props;
     const {
       viewBoxdefault,
       data,
       identifierdata
-    } = (0, _utile.getCountryAndView)(countryCode);
+    } = (0, _utile.getCountryAndView)(regioncode, figure);
     return /*#__PURE__*/_react.default.createElement(_SVGComponent.default, {
       containerClass: `map-svg-segment ${containerClass}`,
       width: width,
@@ -61,6 +63,7 @@ class WorldSVGMap extends _react.default.Component {
         ISOIdentifier: ISOIdentifier,
         customize: customize,
         identifierdata: identifierdata,
+        tooltipdisable: tooltipdisable,
         onClick: e => this.onClick(e, ISOIdentifier)
       });
     }));
@@ -68,12 +71,14 @@ class WorldSVGMap extends _react.default.Component {
 }
 exports.default = WorldSVGMap;
 WorldSVGMap.defaultProps = {
-  countryCode: "",
+  regioncode: "",
   containerClass: "",
   viewBox: "",
   width: "100%",
   height: "100%",
-  filldefault: "#506EEC",
-  strokedefault: "#ccc",
-  customize: {}
+  filldefault: "var(--color-fff)",
+  strokedefault: "var(--color-222)",
+  customize: {},
+  figure: "",
+  tooltipdisable: false
 };

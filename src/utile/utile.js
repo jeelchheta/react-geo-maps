@@ -2,10 +2,10 @@ import data from "../assets/data.json"
 import viewBox from "../assets/viewBox.json"
 import identifierdata from "../assets/identifierdata.json"
 
-export function getCountryAndView(countryCode) {
+export function getCountryAndView(regioncode, figure) {
     return {
-        viewBoxdefault: viewBox[countryCode] || viewBox["worldmap"],
-        data: data[countryCode] || data["worldmap"],
-        identifierdata: identifierdata[countryCode] || identifierdata["worldmap"]
+        viewBoxdefault: viewBox[regioncode + figure] || viewBox[regioncode] || viewBox["worldmap"],
+        data: data[regioncode + figure] || data[regioncode] || data["worldmap"],
+        identifierdata: identifierdata[regioncode + figure] || identifierdata[regioncode] || identifierdata["worldmap"]
     }
 }

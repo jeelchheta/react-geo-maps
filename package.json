@@ -1,6 +1,6 @@
 {
   "name": "react-geo-charts",
-  "version": "1.0.4",
+  "version": "1.0.7",
   "description": "A simple react worldmap and countrymaps component svg base",
   "main": "dist/index.js",
   "scripts": {
@@ -16,14 +16,16 @@
   },
   "keywords": [
     "react",
-    "typescript",
-    "component",
-    "geo map",
-    "usa geo",
-    "world",
+    "charts",
+    "geo charts",
     "map",
+    "geo map",
+    "svg map",
+    "worldmap",
+    "usa map",
     "countries",
-    "svg map"
+    "component",
+    "typescript"
   ],
   "author": "jp techinsight",
   "license": "MIT",

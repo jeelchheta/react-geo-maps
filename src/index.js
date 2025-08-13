@@ -15,23 +15,24 @@ export default class WorldSVGMap extends React.Component {
 
     onClick(event, ISOIdentifier) {
         const { customize } = this.props
-        if (customize[ISOIdentifier]?.onClick) {
+        if (customize[ISOIdentifier]?.onClick && !customize[ISOIdentifier]?.disable) {
             customize[ISOIdentifier]?.onClick(ISOIdentifier);
         }
     }
 
     render() {
         const {
-            countryCode,
+            regioncode,
             containerClass,
             width,
             height,
             filldefault,
             strokedefault,
             customize,
-            viewBox } = this.props;
-        const { viewBoxdefault, data, identifierdata } = getCountryAndView(countryCode)
-
+            viewBox,
+            figure,
+            tooltipdisable } = this.props;
+        const { viewBoxdefault, data, identifierdata } = getCountryAndView(regioncode, figure);
         return <SVGComponent
             containerClass={`map-svg-segment ${containerClass}`}
             width={width}
@@ -47,6 +48,7 @@ export default class WorldSVGMap extends React.Component {
                     ISOIdentifier={ISOIdentifier}
                     customize={customize}
                     identifierdata={identifierdata}
+                    tooltipdisable={tooltipdisable}
                     onClick={(e) => this.onClick(e, ISOIdentifier)} />
             ))}
         </SVGComponent>;
@@ -54,16 +56,18 @@ export default class WorldSVGMap extends React.Component {
 }
 
 WorldSVGMap.defaultProps = {
-    countryCode: "",
+    regioncode: "",
     containerClass: "",
     viewBox: "",
     width: "100%",
     height: "100%",
-    filldefault: "#506EEC",
-    strokedefault: "#ccc",
+    filldefault: "var(--color-fff)",
+    strokedefault: "var(--color-222)",
     customize: {},
+    figure: "",
+    tooltipdisable: false
 };
 
-export{
+export {
     dataSet
 }
